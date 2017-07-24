@@ -2250,6 +2250,7 @@ class DiscussionModel extends Gdn_Model {
         }
 
         $InsertUserID = val('InsertUserID', $Discussion);
+        $Activity['Route'] = discussionUrl($Discussion, '', true);
         foreach ($NotifyUsers as $UserID => $Prefs) {
             if ($UserID == $InsertUserID) {
                 continue;
