@@ -2258,7 +2258,6 @@ class DiscussionModel extends Gdn_Model {
             $Activity['NotifyUserID'] = $UserID;
             $Activity['Emailed'] = val('Emailed', $Prefs, false);
             $Activity['Notified'] = val('Notified', $Prefs, false);
-            Logger::event('debug_notificationX', Logger::ALERT, 'new discussion', $Activity);
             $ActivityModel->queue($Activity);
         }
     }
