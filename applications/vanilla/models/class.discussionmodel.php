@@ -2122,7 +2122,6 @@ class DiscussionModel extends Gdn_Model {
                             'Category' => val('Name', $Category)
                         ]
                     ];
-                    Logger::event('debug_notificationA', Logger::ALERT, 'new discussion', $Activity);
 
                     // Allow simple fulltext notifications
                     if (c('Vanilla.Activity.ShowDiscussionBody', false)) {
@@ -2140,7 +2139,6 @@ class DiscussionModel extends Gdn_Model {
                         try {
                             $Fields['DiscussionID'] = $DiscussionID;
                             $this->notifyNewDiscussion($Fields, $ActivityModel, $Activity);
-                            Logger::event('debug_notificationB', Logger::ALERT, 'new discussion', $Activity);
                         } catch (Exception $Ex) {
                             throw $Ex;
                         }
@@ -2260,6 +2258,7 @@ class DiscussionModel extends Gdn_Model {
             $Activity['NotifyUserID'] = $UserID;
             $Activity['Emailed'] = val('Emailed', $Prefs, false);
             $Activity['Notified'] = val('Notified', $Prefs, false);
+            Logger::event('debug_notificationX', Logger::ALERT, 'new discussion', $Activity);
             $ActivityModel->queue($Activity);
         }
     }
