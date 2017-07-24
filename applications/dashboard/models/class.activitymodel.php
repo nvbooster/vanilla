@@ -872,7 +872,7 @@ class ActivityModel extends Gdn_Model {
                 $Email->to($User);
 
                 $url = externalUrl(val('Route', $Activity) == '' ? '/' : val('Route', $Activity));
-                Logger::event('debug_notification3', Logger::ALERT, 'new discussion', $Activity);
+                Logger::event('debug_notification3', Logger::ALERT, 'new discussion', [$Activity, 'url' => $url]);
                 $emailTemplate = $Email->getEmailTemplate()
                     ->setButton($url, val('ActionText', $Activity, t('Check it out')))
                     ->setTitle($ActivityHeadline);
@@ -994,7 +994,7 @@ class ActivityModel extends Gdn_Model {
         $Email->to($User);
 
         $url = externalUrl(val('Route', $Activity) == '' ? '/' : val('Route', $Activity));
-        Logger::event('debug_notification1', Logger::ALERT, 'new discussion', $Activity);
+        Logger::event('debug_notification1', Logger::ALERT, 'new discussion', [$Activity, 'url' => $url]);
 
         $emailTemplate = $Email->getEmailTemplate()
             ->setButton($url, val('ActionText', $Activity, t('Check it out')))
@@ -1279,7 +1279,7 @@ class ActivityModel extends Gdn_Model {
                 $Email->subject(sprintf(t('[%1$s] %2$s'), Gdn::config('Garden.Title'), $ActivityHeadline));
                 $Email->to($User);
                 $url = externalUrl(val('Route', $Activity) == '' ? '/' : val('Route', $Activity));
-                Logger::event('debug_notification2', Logger::ALERT, 'new discussion', $Activity);
+                Logger::event('debug_notification2', Logger::ALERT, 'new discussion', [$Activity, 'url' => $url]);
 
                 $emailTemplate = $Email->getEmailTemplate()
                     ->setButton($url, val('ActionText', $Activity, t('Check it out')))
