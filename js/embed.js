@@ -39,7 +39,7 @@ window.vanilla.embed = function(host) {
                 host = scripts[i].src;
                 host = host.replace('http://', '').replace('https://', '');
                 host = host.substr(0, host.indexOf(jsPath));
-                host += '/index.php?p=';
+                //host += '/index.php?p=';
 
                 host_base_url = scripts[i].src;
                 host_base_url = host_base_url.substr(0, host_base_url.indexOf(jsPath));

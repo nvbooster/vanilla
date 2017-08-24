@@ -1,0 +1,9 @@
+[submodule "locales/vf_ru"]
+	path = locales/vf_ru
+	url = https://github.com/nvbooster/vf_ru.git
+[submodule "applications/api"]
+	path = applications/api
+	url = https://github.com/nvbooster/vanilla-api.git
+[submodule "themes/custom-bootstrap"]
+	path = themes/custom-bootstrap
+	url = https://github.com/nvbooster/vanilla-bootstrap.git
