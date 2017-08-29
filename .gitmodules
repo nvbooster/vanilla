@@ -7,3 +7,6 @@
 [submodule "themes/custom-bootstrap"]
 	path = themes/custom-bootstrap
 	url = https://github.com/nvbooster/vanilla-bootstrap.git
+[submodule "plugins/jsconnect"]
+	path = plugins/jsconnect
+	url = https://github.com/nvbooster/jsconnect.git
